@@ -1,0 +1,49 @@
+:root{
+    --letter-count: 0;
+    --font-size: max(calc(30vw / var(--letter-count)),calc(30vh / var(--letter-count)));
+    --border-radius: 5px;
+    --color: black;
+    --box-color-unselect: rgb(110, 110, 110);
+    --box-color-normal: rgb(150, 150, 150);
+    --box-color-suspect: rgb(223, 199, 65);
+    --box-color-selected: rgb(207, 207, 207);
+    --box-color-confirm: rgb(19, 167, 0);
+    --box-color-wrong: rgb(255, 0, 0);
+    --box-size: calc(var(--font-size) * 1.4);
+    --margin: 5px;
+}
+
+body{
+    background-color: var(--color);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#panel{
+    user-select: none;
+}
+.word{
+    /*width:calc(calc(var(--box-size) + var(--margin)) * var(--letter-count));*/
+    font-size: var(--font-size);
+    font-weight: bold;
+    color: var(--color);
+    clear: both;
+}
+.word .letter{
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin: var(--margin);
+    float: left;
+    width: var(--box-size);
+    height: var(--box-size);
+    background-color: var(--box-color-normal);
+    transition: 0.5s;
+}
+.word .letter:hover{
+    background-color: var(--box-color-selected);
+}

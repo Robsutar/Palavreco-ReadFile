@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const root = document.querySelector(':root');
+        const rs = getComputedStyle(root);
+        root.style.setProperty('--letter-count',Math.floor(Math.random() * (11 - 3) + 3));
+
+        const letterCount = rs.getPropertyValue('--letter-count');
+        const boxColorUnselect = rs.getPropertyValue('--box-color-unselect');
+        const color = rs.getPropertyValue('--color');
+        const boxColorNormal= rs.getPropertyValue('--box-color-normal');
+        const boxColorSuspect= rs.getPropertyValue('--box-color-suspect');
+        const boxColorSelected= rs.getPropertyValue('--box-color-selected');
+        const boxColorConfirm= rs.getPropertyValue('--box-color-confirm');
+        const boxColorWrong= rs.getPropertyValue('--box-color-wrong');
+    </script>
+    <script src="loadPalabras.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div id="panel">
+        <!--
+        <div id="box1" class="word">
+            <div class="letter"></div>
+            <div class="letter"></div>
+            <div class="letter"></div>
+            <div class="letter"></div>
+            <div class="letter"></div>
+        </div>
+        -->
+        </div>
+    </div>
+
+    <script src="generateDivs.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
